@@ -1,6 +1,7 @@
 package com.revature.eval.java.core;
 
 import java.time.temporal.Temporal;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -30,8 +31,23 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String acronym(String phrase) {
+			//starts off off with empty string
+
+		String acronym = "";
+        
+		acronym += phrase.toUpperCase().charAt(0);
+        for (int i = 0; i <= phrase.length() - 1; i++) {
+            if (phrase.charAt(i) == 0) {
+		acronym += phrase.toUpperCase().charAt(i);
+		}
+	    if (phrase.charAt(i) == ' ') {
+            	acronym += phrase.toUpperCase().charAt(i + 1);
+            }
+        }
+        return acronym;
+        
+		
 		// TODO Write an implementation for this method declaration
-		return null;
 	}
 
 	/**
@@ -85,17 +101,31 @@ public class EvaluationService {
 
 		public boolean isEquilateral() {
 			// TODO Write an implementation for this method declaration
+			if((sideOne != (sideTwo) && sideTwo != sideThree))
 			return false;
+			
+			else {
+				return true;
+			}
 		}
 
 		public boolean isIsosceles() {
 			// TODO Write an implementation for this method declaration
-			return false;
+			if((sideOne != (sideTwo) && (sideTwo) != (sideThree) && sideOne != sideThree))
+				return false;
+				
+				else {
+					return true;
+				}
 		}
 
 		public boolean isScalene() {
 			// TODO Write an implementation for this method declaration
+			if (sideOne == (sideTwo) && (sideTwo) == (sideThree) && sideOne == sideThree)
 			return false;
+			else {
+				return true;
+			}
 		}
 
 	}
@@ -117,7 +147,72 @@ public class EvaluationService {
 	 */
 	public int getScrabbleScore(String string) {
 		// TODO Write an implementation for this method declaration
-		return 0;
+		int count= 0;
+		
+		string.toUpperCase();
+		
+		char [] chars = string.toCharArray();
+		
+		
+		for(int i = 0; i < chars.length; i++ ) {
+			char currentChar = chars[i];
+			switch(currentChar) {
+			case 'A':
+				count +=1;
+			case 'E':
+				count +=1;
+			case 'I':
+				count +=1;
+			case 'O':
+				count +=1;
+			case 'U':
+				count +=1;
+			case 'L':
+				count +=1;
+			case 'N':
+				count +=1;
+			case 'R':
+				count +=1;
+			case 'S':
+				count +=1;
+			case 'T':
+				count +=1;
+			case 'D':
+				count +=2;
+			case 'G':
+				count +=2;
+			case 'B':
+				count +=3;
+			case 'C':
+				count +=3;
+			case 'M':
+				count +=3;
+			case 'P':
+				count +=3;
+			case 'F':
+				count +=4;
+			case 'H':
+				count +=4;
+			case 'V':
+				count +=4;
+			case 'W':
+				count +=4;
+			case 'Y':
+				count +=4;
+			case 'K':
+				count +=5;
+			case 'J':
+				count +=8;
+			case 'X':
+				count +=8;
+			case 'Q':
+				count +=10;
+			case 'Z':
+				count +=10;
+			
+			}
+		}
+		return count;
 	}
 
 	/**
@@ -153,6 +248,23 @@ public class EvaluationService {
 	 */
 	public String cleanPhoneNumber(String string) {
 		// TODO Write an implementation for this method declaration
+
+		if(string.contains("-")) {
+			String s1 = string.replaceAll("-","");
+			System.out.println(s1);
+		}
+		else if (string.contains("\\s")){
+			String s2 = string.replaceAll("\\s","");
+			System.out.println(s2);
+		}
+		else if (string.contains("()")){
+			String s3 = string.replaceAll("()", "");
+			System.out.println(s3);
+		}
+			else {
+				System.out.println(string);
+		}
+				
 		return null;
 	}
 
@@ -210,7 +322,20 @@ public class EvaluationService {
 
 		public int indexOf(T t) {
 			// TODO Write an implementation for this method declaration
+			
+			int length = sortedList.size();
+			int mid = (length +1)/2;
+			
+			if(t.equals(sortedList.get(mid))) {
+				return mid;
+			}
+			while(
+			length<= mid) {
+			}
+			
 			return 0;
+			
+			
 		}
 
 		public BinarySearch(List<T> sortedList) {
