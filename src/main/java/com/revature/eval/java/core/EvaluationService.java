@@ -151,11 +151,11 @@ public class EvaluationService {
 		
 		string.toUpperCase();
 		
-		char [] chars = string.toCharArray();
-		
-		
-		for(int i = 0; i < chars.length; i++ ) {
+		for(int i = 0; i < string.length(); i++ ) {
+			
+			char [] chars = string.toCharArray();
 			char currentChar = chars[i];
+			
 			switch(currentChar) {
 			case 'A':
 				count +=1;
@@ -177,10 +177,12 @@ public class EvaluationService {
 				count +=1;
 			case 'T':
 				count +=1;
+				break;
 			case 'D':
 				count +=2;
 			case 'G':
 				count +=2;
+				break;
 			case 'B':
 				count +=3;
 			case 'C':
@@ -189,6 +191,7 @@ public class EvaluationService {
 				count +=3;
 			case 'P':
 				count +=3;
+				break;
 			case 'F':
 				count +=4;
 			case 'H':
@@ -199,16 +202,19 @@ public class EvaluationService {
 				count +=4;
 			case 'Y':
 				count +=4;
+				break;
 			case 'K':
 				count +=5;
 			case 'J':
 				count +=8;
 			case 'X':
 				count +=8;
+				break;
 			case 'Q':
 				count +=10;
 			case 'Z':
 				count +=10;
+				break;
 			
 			}
 		}
@@ -279,6 +285,13 @@ public class EvaluationService {
 	 */
 	public Map<String, Integer> wordCount(String string) {
 		// TODO Write an implementation for this method declaration
+		String k[] = string.split(" ");
+		
+		int count = 0;
+		for(int i = 0; i <k.length; i++)
+			if(string.equals(k[i]));
+				wordCount.put(k[i],count++);
+				
 		return null;
 	}
 
@@ -326,13 +339,15 @@ public class EvaluationService {
 			int length = sortedList.size();
 			int mid = (length +1)/2;
 			
-			if(t.equals(sortedList.get(mid))) {
+			do {
+				t.equals(sortedList.get(mid));
 				return mid;
 			}
-			while(
-			length<= mid) {
+			while(length <= mid) {
+				if()
+				
 			}
-			
+						
 			return 0;
 			
 			

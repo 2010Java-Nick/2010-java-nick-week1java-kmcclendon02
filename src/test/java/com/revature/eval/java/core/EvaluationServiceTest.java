@@ -129,7 +129,7 @@ public class EvaluationServiceTest {
 	 * Question 4
 	 ******************************************************************/
 	@Test
-	public void testAValuableLetter() {
+	public void testAValuable Letter() {
 		assertEquals(4, evaluationService.getScrabbleScore("f"));
 	}
 
